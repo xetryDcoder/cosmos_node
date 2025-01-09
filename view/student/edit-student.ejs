@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Edit Students</h2>
+    <p>Please fill up all the details of Students </p>
+    <form action="/update-student/<%= data.id %>" method="post">
+        <input type="text" placeholder="Student Name" name="std_name"  value="<%= data.std_name %>"> <br>
+        <input type="text" placeholder="Student Address" name="std_address" value="<%= data.std_address %>"><br>
+        <input type="text" placeholder="Student Age" name="std_age" value="<%= data.std_age %>"><br>
+        <input type="text" placeholder="Student Fees" name="std_fees" value="<%= data.std_fees %>"><br>
+        <input type="text" placeholder="Student Level" name="std_level" value="<%= data.std_level %>"><br>
+        <input type="submit" value="Update the data">
+    </form>
+</body>
+</html>
