@@ -6,6 +6,9 @@ module.exports = (sequelize, Sequelize) => {
         std_address: {
             type: Sequelize.STRING
         },
+        std_image: {
+            type: Sequelize.STRING
+        },
         std_age: {
             type: Sequelize.STRING
         },

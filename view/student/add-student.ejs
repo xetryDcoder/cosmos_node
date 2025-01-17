@@ -9,12 +9,13 @@
     <h2>Add Students</h2>
     <p>Please fill up all the details of Students </p>
 
-    <form action="/save-student" method="post">
-        <input type="text" placeholder="Student Name" name="std_name" > <br>
-        <input type="text" placeholder="Student Address" name="std_address"><br>
-        <input type="text" placeholder="Student Age" name="std_age"><br>
-        <input type="text" placeholder="Student Fees" name="std_fees" ><br>
-        <input type="text" placeholder="Student Level" name="std_level" ><br>
+    <form action="/save-student" method="post" enctype="multipart/form-data">
+        <input type="text" placeholder="Student Name" name="std_name" required > <br>
+        <input type="file" name="std_image" required><br>
+        <input type="text" placeholder="Student Address" name="std_address" required><br>
+        <input type="text" placeholder="Student Age" name="std_age" required><br>
+        <input type="text" placeholder="Student Fees" name="std_fees" required ><br>
+        <input type="text" placeholder="Student Level" name="std_level" required ><br>
         <input type="submit" value="save the data">
     </form>
 </body>

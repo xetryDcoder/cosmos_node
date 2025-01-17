@@ -6,7 +6,18 @@ exports.getAddStudent = (req, res) => {
 }
 
 exports.postStudentData = async (req, res) => {
-    let process = await STUDENT.create({ ...req.body })
+    if(!req.file){
+        return res.send("File NOt Uplaoded")
+    }
+
+    if(req.body.std_name == "" || req.body.std_fees == "" || req.body.std_address == "" || req.body.std_phone == ""){
+    return res.send("Please fill all the fields")
+    }
+
+    let process = await STUDENT.create({
+        std_image: req.file.filename,
+        ...req.body
+    })
     console.log(req.body)
     res.send("Backend ma data aayo hai nani babu haru")
 }

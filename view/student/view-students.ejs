@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
     <title>Document</title>
 </head>
+
 <body>
+
+    <img src="assets/1.png" alt="">
     <h1>All Students</h1>
 
     <table border="1">
         <tr>
             <td>No</td>
+            <td>Image</td>
             <td>Name</td>
             <td>Address</td>
             <td>Age</td>
@@ -19,19 +25,22 @@
             <td>Action</td>
         </tr>
         <% if(data.length === 0) { %>
-            <p>No data</p>
-            <% } %>
-        
+        <p>No data</p>
+        <% } %>
+
         <% for(let i = 0; i< data.length; i++) { %>
         <tr>
             <td><%= i + 1 %></td>
+            <td>
+                <img src="uploads/<%= data[i].std_image %>" alt="" height="100" width="100">
+            </td>
             <td><%= data[i].std_name %></td>
             <td><%= data[i].std_address %></td>
             <td><%= data[i].std_age %></td>
             <td><%= data[i].std_fees %></td>
             <td><%= data[i].std_level %></td>
             <td>
-                <a href="/delete-student/<%= data[i].id %>">Delete</a> | 
+                <a href="/delete-student/<%= data[i].id %>">Delete</a> |
                 <a href="/edit-student/<%= data[i].id %>">Edit</a>
                 <a href="/add-fine/<%= data[i].id %>">Add Fine</a>
             </td>
@@ -39,4 +48,5 @@
         <% } %>
     </table>
 </body>
+
 </html>
