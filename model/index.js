@@ -24,5 +24,6 @@ db.sequelize = sequelize;
 //Model Call
 db.Student = require('./student')(sequelize, Sequelize)
 db.User = require('./user')(sequelize, Sequelize)
+db.Todo = require('./todo')(sequelize, Sequelize)
 
 module.exports = db
